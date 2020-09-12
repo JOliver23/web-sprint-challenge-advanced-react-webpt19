@@ -10,6 +10,16 @@ export default class PlantList extends Component {
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
+  componentDidMount() {
+    console.log("jo: PlantList.js: PlantList: CDM: cdm run")
+    axios("http://localhost:3333/plants")
+      .then(response => {
+        console.log("jo: PlantList.js: PlantList: CDM: axios res: ", response)
+      })
+       .catch(err => {
+         console.log("Error: ", err)
+       })
+  }
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
