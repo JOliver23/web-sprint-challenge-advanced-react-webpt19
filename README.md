@@ -30,13 +30,37 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+We import React from react; 
+Declare our component, extending React component : 		        class {component name} extends React.component{
+Set up our data object in state, using the constructor function: 		    constructor() {
+In out constructor we call super to have access this.state: 		        	super(); this.state = {}; }
+We render to the DOM, using render(),returning JSX: 				              render() {return (JSX)};
+We can make it more dynamic depending on what we’re building it for;														}
+
 2. Describe the different phases of the component lifecycle.
+
+Render Phase: Renders the JSX to the DOM; happens every time state is changed or state is updated
+Pre-Commit Phase: Reads the DOM, comparing changes of the Virtual DOM to the DOM 
+Commit Phase: Works with the DOM to run side effects and update.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+Mounting: componentDidMount(), mounts our component to the DOM; this is where API calls are made once we know our component will mount the data received from the call. 
+Updating: componentDidUpdate(), re-render the DOM with altered state and data.
+Unmounting: componentWillUnmount(); the end of the lifecycle, component served its purpose.
+
 4. Define stateful logic.
 
+Stateful logic is any reusable/dynamic code that uses logic. Hooks allow us to to use state to give values specific to components, but also multiple components can use the hooks to get their own values.
+
 5. Describe how to test a React component with React Testing Library.
+
+describe the test: it(“description”, () => {
+Arrange:			const {getByText} = render(<App />);
+Act:				const task = getByText(/string/i);
+Assert:			expect(task).toBeInTheDocument;
+				});
+Grab the component you’re testing; set up the test variables; test that after a task the expected outcome is successful.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,16 +78,16 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [x] Run `npm install` to download dependencies for the server.
+- [x] Run the server using `npm start`.
+- [x] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
