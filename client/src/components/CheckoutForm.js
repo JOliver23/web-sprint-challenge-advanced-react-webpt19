@@ -26,10 +26,11 @@ const CheckoutForm = (props) => {
   //   e.preventDefault();
   //   setShowSuccessMessage(true);
   // };
+  console.log(showSuccessMessage)
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} data-testid="success-message">
         <h2>Checkout Form</h2>
         <label>
           First Name:
@@ -67,11 +68,11 @@ const CheckoutForm = (props) => {
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button data-testid="btn">Checkout</button>
+        <button data-testid="bttn">Checkout</button>
       </form>
 
       {showSuccessMessage && (
-        <div className="success-message" data-testid="successMessage">
+        <div className="success-message">
           <p>
             You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
           </p>

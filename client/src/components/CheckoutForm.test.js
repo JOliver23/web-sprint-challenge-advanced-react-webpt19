@@ -12,8 +12,9 @@ test("form header renders", () => {
 
 test("form shows success message on submit with form details", () => {
     const {getByTestId, getByText} = render(<CheckoutForm />);
-    const chckbtn = getByTestId("btn");
+    const chckbtn = getByTestId("bttn");
     const confirmation = getByTestId("success-message");
     fireEvent.click(chckbtn);
     expect(confirmation).toBeInTheDocument;
 });
+
